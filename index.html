@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Covid-19 Circle Packing</title>
+    <script src="https://d3js.org/d3.v5.js"></script>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: benton-sans , sans-serif;
+        font-weight: 100;
+    }
+
+    body {
+        position: relative;
+        min-height: 100vh;
+        background-color: white;
+    }
+
+    h2{
+        font-weight: 500;
+        font-size: 28px;
+        padding-bottom: 20px;
+    }
+
+    h3, h3::first-letter{
+        font-size: 18px;
+        -webkit-initial-letter: 2;
+        initial-letter: 2;
+    }
+
+    article{
+        line-height: 150%;
+    }
+
+    .subhead::first-letter{
+        -webkit-initial-letter: 2;
+        initial-letter: 2;
+    }
+
+    .initial-letter{
+        line-height: 70px;
+        font-size: 35px;
+    }
+
+    li, a, button {
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+    }
+
+    div.tooltip{
+        text-align: center;
+        width: 80px;
+        height: 50px;
+        padding: 2px;
+        border: 0px;
+        border-radius: 8px;
+    }
+
+
+    header{
+        background: rgba(196, 203, 219, 0.48);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+    }
+
+    .logo{
+        background: transparent;
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav_links{
+        background: transparent;
+        list-style: none;
+    }
+
+    .nav_links li{
+        background: transparent;
+        display: inline-block;
+        padding: 0px 20px;
+    }
+
+    .nav_links li a{
+        background: transparent;
+        transition: all 0.3s ease 0s;
+    }
+
+    .nav_links li a:hover{
+        color: white;
+    }
+
+    button{
+        padding: 9px 25px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+
+    button:hover {
+        background-color: rgba(196, 203, 219, 0.48);
+    }
+
+    #footer-bottom {
+        background: rgba(196, 203, 219, 0.48);
+        bottom: 0;
+        color: black;
+        display: flex;
+        grid-row: 2;
+        height: 80px;
+        position: absolute;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-items: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 20vh;
+        color: #282828;
+        background-color: white;
+    }
+
+    .section:last-of-type{
+        min-height: 350px;
+    }
+
+    .center{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+    }
+
+    svg{
+        border-style: solid;
+        border-width: 1px;
+        border-color: #333439;
+        border-radius: 5px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    div{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    hr {
+        width: 90%;
+        height: 1px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: black;
+        border: 0 none;
+    }
+
+
+</style>
+<body>
+<header>
+    <img class="logo" src="Ayberk_Demirkol_logo.png" alt="logo" href="#Introduction"></img>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="#Visualisation">Visualisation</a></li>
+            <li><a href="#Description">Description</a></li>
+            <li><a href="#References">References</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<div class="section" id="Visualisation"> <h2>Visualisation</h2>
+    <section>
+
+        <div id="circlePacking">
+            <div class="center">
+                <p>Circle Packing of Covid-19 cases in U.S.A</p>
+            </div>
+            <script>
+                var width = 1080, height = 800,
+                cy = 18, cx = 15,
+                margins = {top: 50, right: 50, bottom: 50, left: 50};
+
+                var svg = d3.select("#circlePacking").append("svg")
+                    .attr("width",width).attr("height",height).append("g")
+                    .attr("transform", "translate(0, 50)")
+
+                var color = d3.scaleOrdinal()
+                    .range(["rgba(218,232,252,0.31)",   // Main Circle
+                        "rgba(218,232,252,0.89)",  // State
+                        "rgba(160,232,150,0.81)",  // Recovered
+                        "#777578",  // Death
+                        "#eab010",   // Ventilator
+                        "#ea5c0c",  // ICU
+                        "#ea212f",  // Hospitalized
+
+                    ]);
+
+                var legendColor = d3.scaleOrdinal()
+                    .range([   // Main Circle
+                        "rgb(218,232,252)",  // State
+                        "rgba(160,232,150,0.81)",  // Recovered
+                        "#777578",  // Death
+                        "#ea212f",  // ICU
+                        "#ea5c0c",  // Ventilator
+                        "#eab010"   // Hospitalized
+                    ]);
+                const keys = ["State Total", "Recovered","Death", "Ventilator", "ICU","Hospitalized" ];
+                const states = ["AK","AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA","HI"
+                ,"IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC",
+                "ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX",
+                "UT","VA","VT","WA","WI","WV","WY","PR","AS","GU","MP","VI"]
+
+                var tooltip = d3.select("body")
+                    .append("div")
+                    .attr("stroke","#000")
+                    .attr("class","tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("opacity",0.6)
+                    .style("visibility", "hidden")
+                    .style("background", "#fff")
+                    .style("font", "12px sans-serif")
+                        .text("a simple tooltip");
+
+                var data = d3.json("current.json").then(function(data){
+
+                    pack = data => d3.pack()
+                        .size([width, height-margins.top-margins.bottom])
+                        .padding(3)
+                        (d3.hierarchy(data)
+                            .sum(d => d.value)
+                            .sort((a, b) => b.value - a.value))
+
+                    const root = pack(data);
+
+                    const node = svg.append("g")
+                        .selectAll("circle")
+                        .data(root.descendants())
+                        .join("circle")
+                        .attr("r", function(d){return d.r})
+                        .attr("id", function(d) { return "node-" + d.data.type + "-" + d.data.name; })
+                        .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"})
+                        .attr("class", d => (d.depth==2 ? d.parent.data.name : d.data.name))
+                            .style("fill", function(d) { return color(d.data.type); })
+                        .on("mouseover", function() {
+                            d3.select(this).attr("stroke", "#000");
+                        })
+                        .on("mouseout", function() {
+                            d3.select(this).attr("stroke", null);
+                        })
+                        .on("click",function(d) {
+                            tooltip.style("visibility","visible").style("left", d3.event.pageX-35+"px")
+                                .style("top", d3.event.pageY-30+"px")
+                            .html(function() {
+                                if (d.depth == 1){
+                                    return d.data.name +"<br>" + "Total Case" + "</br><b/>" + d.data.positive
+                                }
+                                else if (d.depth == 2){
+                                  return d.parent.data.name + "<br>" +  d.data.type + "</br><b/>" + d.data.value
+                                }
+                                else{
+                                    tooltip.style("visibility","hidden")
+                                }
+                            })
+                        })
+
+                            const label = svg.append("g")
+                        .style("font", "10px sans-serif")
+                        .attr("pointer-events", "none")
+                        .attr("text-anchor", "middle")
+                        .selectAll("text")
+                        .data(root.descendants())
+                        .join("text")
+                                .attr("class",function(d){
+                                    if(d.depth == 1){
+                                        return d.data.name
+                                    }
+                                })
+                        .attr("transform", d => `translate(${(d.x)},${(d.y)})`)
+                        .text(d => d.data.name);
+
+                    // Add one dot in the legend for each name.
+                    var legend = svg.selectAll(".legend")
+                        .data(keys)
+                        .enter()
+                        .append("circle")
+                        .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+                            .attr("cx", width - cx)
+                        .attr("cy", cy)
+                        .attr("r",5)
+                            .style("fill", function(d){ return legendColor(d)})
+
+                    svg.selectAll("mylabels")
+                        .data(keys)
+                        .enter()
+                        .append("text")
+                        .attr("x", width - 24)
+                        .attr("y", 14)
+                        .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+                            .attr("dy", ".35em")
+                        .style("text-anchor", "end")
+                        .style("fill", function(d){ return legendColor(d)})
+                        .text(function(d){ return d})
+                        .style("alignment-baseline", "middle")
+
+                    var legend = svg.selectAll(".states")
+                        .data(states)
+                        .enter()
+                        .append("circle")
+                        .attr("transform", function(d, i) {
+                            if (i < 30){
+                            return "translate(20," + i * 20 + ")";
+                        }
+                        else{
+                            return "translate(80," + (i-30) * 20 + ")";
+                        }})
+                        .attr("cy", cy)
+                            .attr("r",5)
+
+                    svg.selectAll("stateNames")
+                        .data(states)
+                        .enter()
+                        .append("text")
+                        .attr("x", 15)
+                        .attr("y", 14)
+                        .attr("class","name")
+                        .attr("transform", function(d, i) {
+                            if (i < 30){
+                            return "translate(20," + i * 20 + ")";
+                            }
+                            else{
+                                return "translate(80," + (i-30) * 20 + ")";
+                            }
+                        })
+                        .attr("dy", ".35em")
+                        .style("text-anchor", "start")
+                        .text(function(d){ return d})
+                        .style("fill","rgba(88,232,72,0.81)")
+                        .style("alignment-baseline", "middle")
+                        .on("mouseover", function(d, i) {
+                            var thislegend = d3.select(this)
+                            thislegend.style("opacity",0.5)
+                        })
+                        .on('mouseout',function(d) {
+                            var thislegend = d3.select(this)
+                            thislegend.style("opacity",1)
+                        })
+                        .on("click",function(d) {
+                            var thislegend = d3.select(this)
+                            thislegend.classed("selected",!thislegend.classed("selected"))
+                            if (thislegend.classed("selected")){
+                                thislegend.style("fill","rgba(232,17,27,0.81)")
+                                svg.selectAll("."+d).style("visibility","hidden")
+                            }
+                            else{
+                                thislegend.style("fill","rgba(88,232,72,0.81)")
+                                svg.selectAll("."+d).style("visibility","visible")
+                            }
+                        });
+                    })
+            </script>
+
+        </div>
+    </section>
+</div>
+<hr>
+<div class="section" id="Description"> <h2>Description</h2>
+    <article class="subhead">
+        <!-- -->
+        The dataset used in this project can be downloaded from <a href="https://covidtracking.com/api"><u>Covid Tracking Project</u></a>. Current state data is downloaded
+        in JSON format for this project. Later, the data is processed for nesting. Abundant information is removed from the dataset such as cumulative counts and
+        dates. Circles with different colours are used for each parameter. Intensive Care Unit (ICU) cases are shown by orange, ventilator cases are shown by red, hospitalized
+        cases are shown by yellow, recovered cases are shown by green, death cases are shown by gray and finally total cases in a state is shown by light blue. In order to
+        remove a state from the circle packing, click on the states name at the left of the visualisation. In order to see the numbers of cases and states click on the circles.
+    </article>
+</div>
+<hr>
+<div class="section" id="References"> <h2>References</h2>
+    <article style="text-align: center">
+        [1] “Adding Tooltips to a d3.Js Graph.” D3.Js Tips and Tricks, Blogger, 12 Jan. 2013, www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html.
+        <br>
+        [2] Bostock, Mike. “Zoomable Circle Packing.” Zoomable Circle Packing, Observable, 27 Nov. 2018, observablehq.com/@d3/zoomable-circle-packing.
+    </article>
+</div>
+
+</body>
+<!-- Footer -->
+<footer id="footer-bottom" class="container">
+    <div> &copy; Ayberk Demirkol U1723743 | Designed by Ayberk Demirkol</div>
+</footer>
+
+<!-- Footer -->
+</html>

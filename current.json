@@ -1,0 +1,620 @@
+
+{
+  "children": [
+    {
+        "name": "AK",
+        "type": "State",
+        "positive": 381,
+        "children": [
+      {"type": "Hospitalized","value": 7},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 328},
+      {"type": "Death","value": 10}
+    ]},
+    {
+        "name": "AL",
+        "type": "State",
+        "positive": 10009,
+        "children": [
+            {"type": "Hospitalized","value": 0},
+            {"type": "ICU","value": 0},
+            {"type": "Ventilator","value": 0},
+            {"type": "Recovered","value": 0},
+            {"type": "Death","value": 401}
+    ]},
+    {
+        "name": "AR",
+        "type": "State",
+        "positive": 4034,
+        "children": [
+      {"type": "Hospitalized","value": 61},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 11},
+      {"type": "Recovered","value": 3149},
+      {"type": "Death","value": 94}
+    ]},
+    {
+        "name": "AZ",
+        "type": "State",
+        "positive": 11380,
+        "children": [
+      {"type": "Hospitalized","value": 717},
+      {"type": "ICU","value": 297},
+      {"type": "Ventilator","value": 201},
+      {"type": "Recovered","value": 2852},
+      {"type": "Death","value": 542}
+    ]},
+    {
+        "name": "CA",
+        "type": "State",
+        "positive": 67938,
+        "children": [
+      {"type": "Hospitalized","value": 4549},
+      {"type": "ICU","value": 1329},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 2770}
+    ]},
+    {
+        "name": "CO",
+        "type": "State",
+        "positive": 19899,
+        "children": [
+      {"type": "Hospitalized","value": 573},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 3076},
+      {"type": "Death","value": 981}
+    ]},
+    {
+        "name": "CT",
+        "type": "State",
+        "positive": 33765,
+        "children": [
+      {"type": "Hospitalized","value": 1212},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 5413},
+      {"type": "Death","value": 3008}
+    ]},
+    {
+        "name": "DC",
+        "type": "State",
+        "positive": 6389,
+        "children": [
+      {"type": "Hospitalized","value": 416},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 82},
+      {"type": "Recovered","value": 881},
+      {"type": "Death","value": 328}
+    ]},
+    {
+        "name": "DE",
+        "type": "State",
+        "positive": 6565,
+        "children": [
+      {"type": "Hospitalized","value": 275},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 2619},
+      {"type": "Death","value": 225}
+    ]},
+    {
+        "name": "FL",
+        "type": "State",
+        "positive": 40982,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 1805}
+    ]},
+    {
+        "name": "GA",
+        "type": "State",
+        "positive": 33927,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 1441}
+    ]},
+    {
+        "name": "HI",
+        "type": "State",
+        "positive": 632,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 561},
+      {"type": "Death","value": 17}
+    ]},
+    {
+        "name": "IA",
+        "type": "State",
+        "positive": 12373,
+        "children": [
+      {"type": "Hospitalized","value": 394},
+      {"type": "ICU","value": 152},
+      {"type": "Ventilator","value": 107},
+      {"type": "Recovered","value": 5249},
+      {"type": "Death","value": 271}
+    ]},
+    {
+        "name": "ID",
+        "type": "State",
+        "positive": 2230,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 1473},
+      {"type": "Death","value": 67}
+    ]},
+    {
+        "name": "IL",
+        "type": "State",
+        "positive": 79007,
+        "children": [
+      {"type": "Hospitalized","value": 4319},
+      {"type": "ICU","value": 1248},
+      {"type": "Ventilator","value": 730},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 3459}
+    ]},
+    {
+        "name": "IN",
+        "type": "State",
+        "positive": 24627,
+        "children": [
+      {"type": "Hospitalized","value": 1346},
+      {"type": "ICU","value": 452},
+      {"type": "Ventilator","value": 213},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 1540}
+    ]},
+    {
+        "name": "KS",
+        "type": "State",
+        "positive": 7116,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 376},
+      {"type": "Death","value": 158}
+    ]},
+    {
+        "name": "KY",
+        "type": "State",
+        "positive": 6440,
+        "children": [
+      {"type": "Hospitalized","value": 394},
+      {"type": "ICU","value": 226},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 2308},
+      {"type": "Death","value": 304}
+    ]},
+    {
+        "name": "LA",
+        "type": "State",
+        "positive": 31815,
+        "children": [
+      {"type": "Hospitalized","value": 1310},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 157},
+      {"type": "Recovered","value": 22608},
+      {"type": "Death","value": 2308}
+    ]},
+    {
+        "name": "MA",
+        "type": "State",
+        "positive": 78462,
+        "children": [
+      {"type": "Hospitalized","value": 3102},
+      {"type": "ICU","value": 813},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 5108}
+    ]},
+    {
+      "name": "MD",
+      "type": "State",
+      "positive": 33373,
+      "children": [
+        {"type": "Hospitalized","value": 1544},
+        {"type": "ICU","value": 585},
+        {"type": "Ventilator","value": 0},
+        {"type": "Recovered","value": 2298},
+        {"type": "Death","value": 1683}
+      ]},
+    {
+        "name": "ME",
+        "type": "State",
+        "positive": 1462,
+        "children": [
+      {"type": "Hospitalized","value": 37},
+      {"type": "ICU","value": 17},
+      {"type": "Ventilator","value": 9},
+      {"type": "Recovered","value": 872},
+      {"type": "Death","value": 65}
+    ]},
+    {
+        "name": "MI",
+        "type": "State",
+        "positive": 47552,
+        "children": [
+      {"type": "Hospitalized","value": 1424},
+      {"type": "ICU","value": 685},
+      {"type": "Ventilator","value": 557},
+      {"type": "Recovered","value": 22686},
+      {"type": "Death","value": 4584}
+    ]},
+    {
+        "name": "MN",
+        "type": "State",
+        "positive": 11799,
+        "children": [
+      {"type": "Hospitalized","value": 452},
+      {"type": "ICU","value": 194},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 7536},
+      {"type": "Death","value": 591}
+    ]},
+    {
+        "name": "MO",
+        "type": "State",
+        "positive": 9918,
+        "children": [
+      {"type": "Hospitalized","value": 824},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 137},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 488}
+    ]},
+    {
+        "name": "MS",
+        "type": "State",
+        "positive": 9674,
+        "children": [
+      {"type": "Hospitalized","value": 507},
+      {"type": "ICU","value": 132},
+      {"type": "Ventilator","value": 68},
+      {"type": "Recovered","value": 6248},
+      {"type": "Death","value": 435}
+    ]},
+    {
+        "name": "MT",
+        "type": "State",
+        "positive": 459,
+        "children": [
+      {"type": "Hospitalized","value": 4},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 423},
+      {"type": "Death","value": 16}
+    ]},
+    {
+        "name": "NC",
+        "type": "State",
+        "positive": 15045,
+        "children": [
+      {"type": "Hospitalized","value": 464},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 9115},
+      {"type": "Death","value": 550}
+    ]},
+    {
+        "name": "ND",
+        "type": "State",
+        "positive": 1518,
+        "children": [
+      {"type": "Hospitalized","value": 34},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 846},
+      {"type": "Death","value": 36}
+    ]},
+    {
+        "name": "NE",
+        "type": "State",
+        "positive": 8315,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 98}
+    ]},
+    {
+        "name": "NH",
+        "type": "State",
+        "positive": 3160,
+        "children": [
+      {"type": "Hospitalized","value": 113},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 1229},
+      {"type": "Death","value": 133}
+    ]},
+    {
+        "name": "NJ",
+        "type": "State",
+        "positive": 139945,
+        "children": [
+      {"type": "Hospitalized","value": 4195},
+      {"type": "ICU","value": 1255},
+      {"type": "Ventilator","value": 970},
+      {"type": "Recovered","value": 15642},
+      {"type": "Death","value": 9310}
+    ]},
+    {
+        "name": "NM",
+        "type": "State",
+        "positive": 4863,
+        "children": [
+      {"type": "Hospitalized","value": 194},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 1285},
+      {"type": "Death","value": 200}
+    ]},
+    {
+        "name": "NV",
+        "type": "State",
+        "positive": 6152,
+        "children": [
+      {"type": "Hospitalized","value": 482},
+      {"type": "ICU","value": 117},
+      {"type": "Ventilator","value": 60},
+      {"type": "Recovered","value": 183},
+      {"type": "Death","value": 306}
+    ]},
+    {
+        "name": "NY",
+        "type": "State",
+        "positive": 337055,
+        "children": [
+      {"type": "Hospitalized","value": 7226},
+      {"type": "ICU","value": 2450},
+      {"type": "Ventilator","value": 2020},
+      {"type": "Recovered","value": 58363},
+      {"type": "Death","value": 21640}
+    ]},
+    {
+        "name": "OH",
+        "type": "State",
+        "positive": 24777,
+        "children": [
+      {"type": "Hospitalized","value": 1011},
+      {"type": "ICU","value": 391},
+      {"type": "Ventilator","value": 256},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 1357}
+    ]},
+    {
+        "name": "OK",
+        "type": "State",
+        "positive": 4613,
+        "children": [
+      {"type": "Hospitalized","value": 177},
+      {"type": "ICU","value": 93},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 3241},
+      {"type": "Death","value": 274}
+    ]},
+    {
+        "name": "OR",
+        "type": "State",
+        "positive": 3286,
+        "children": [
+      {"type": "Hospitalized","value": 164},
+      {"type": "ICU","value": 40},
+      {"type": "Ventilator","value": 23},
+      {"type": "Recovered","value": 1125},
+      {"type": "Death","value": 130}
+    ]},
+    {
+        "name": "PA",
+        "type": "State",
+        "positive": 57154,
+        "children": [
+      {"type": "Hospitalized","value": 2176},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 497},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 3731}
+    ]},
+    {
+        "name": "RI",
+        "type": "State",
+        "positive": 11450,
+        "children": [
+      {"type": "Hospitalized","value": 276},
+      {"type": "ICU","value": 73},
+      {"type": "Ventilator","value": 52},
+      {"type": "Recovered","value": 841},
+      {"type": "Death","value": 430}
+    ]},
+    {
+        "name": "SC",
+        "type": "State",
+        "positive": 7653,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 4120},
+      {"type": "Death","value": 331}
+    ]},
+    {
+        "name": "SD",
+        "type": "State",
+        "positive": 3614,
+        "children": [
+      {"type": "Hospitalized","value": 78},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 2187},
+      {"type": "Death","value": 34}
+    ]},
+    {
+        "name": "TN",
+        "type": "State",
+        "positive": 15544,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 8038},
+      {"type": "Death","value": 251}
+    ]},
+    {
+        "name": "TX",
+        "type": "State",
+        "positive": 39869,
+        "children": [
+      {"type": "Hospitalized","value": 1525},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 21713},
+      {"type": "Death","value": 1100}
+    ]},
+    {
+        "name": "UT",
+        "type": "State",
+        "positive": 6263,
+        "children": [
+      {"type": "Hospitalized","value": 160},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 3181},
+      {"type": "Death","value": 68}
+    ]},
+    {
+        "name": "VA",
+        "type": "State",
+        "positive": 25070,
+        "children": [
+      {"type": "Hospitalized","value": 1504},
+      {"type": "ICU","value": 362},
+      {"type": "Ventilator","value": 194},
+      {"type": "Recovered","value": 3273},
+      {"type": "Death","value": 850}
+    ]},
+    {
+        "name": "VT",
+        "type": "State",
+        "positive": 926,
+        "children": [
+      {"type": "Hospitalized","value": 14},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 785},
+      {"type": "Death","value": 53}
+    ]},
+    {
+        "name": "WA",
+        "type": "State",
+        "positive": 16891,
+        "children": [
+      {"type": "Hospitalized","value": 350},
+      {"type": "ICU","value": 110},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 931}
+    ]},
+    {
+        "name": "WI",
+        "type": "State",
+        "positive": 10418,
+        "children": [
+      {"type": "Hospitalized","value": 520},
+      {"type": "ICU","value": 116},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 5176},
+      {"type": "Death","value": 409}
+    ]},
+    {
+        "name": "WV",
+        "type": "State",
+        "positive": 1366,
+        "children": [
+      {"type": "Hospitalized","value": 49},
+      {"type": "ICU","value": 10},
+      {"type": "Ventilator","value": 6},
+      {"type": "Recovered","value": 775},
+      {"type": "Death","value": 54}
+    ]},
+    {
+        "name": "WY",
+        "type": "State",
+        "positive": 662,
+        "children": [
+      {"type": "Hospitalized","value": 12},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 443},
+      {"type": "Death","value": 7}
+    ]},
+    {
+        "name": "PR",
+        "type": "State",
+        "positive": 2256,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 113}
+    ]},
+    {
+        "name": "AS",
+        "type": "State",
+        "positive": 0,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 0},
+      {"type": "Death","value": 0}
+    ]},
+    {
+        "name": "GU",
+        "type": "State",
+        "positive": 151,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 124},
+      {"type": "Death","value": 5}
+    ]},
+    {
+        "name": "MP",
+        "type": "State",
+        "positive": 19,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 12},
+      {"type": "Death","value": 2}
+    ]},
+    {
+        "name": "VI",
+        "type": "State",
+        "positive": 69,
+        "children": [
+      {"type": "Hospitalized","value": 0},
+      {"type": "ICU","value": 0},
+      {"type": "Ventilator","value": 0},
+      {"type": "Recovered","value": 60},
+      {"type": "Death","value": 5}
+    ]}
+]}
